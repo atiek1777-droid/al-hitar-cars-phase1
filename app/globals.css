@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  body {
+    @apply bg-ink-50 text-ink-900 antialiased;
+  }
+}
+
+@media print {
+  @page {
+    size: A5;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-black/5 bg-white p-5 shadow-card;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm font-medium text-ink-900 transition hover:bg-black/5;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-red-700;
+  }
+  .input-field {
+    @apply w-full rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+  }
+  .label-field {
+    @apply mb-1.5 block text-sm font-medium text-ink-900/80;
+  }
+  .error-text {
+    @apply mt-1 text-xs text-red-600;
+  }
+  .table-base {
+    @apply w-full text-right text-sm;
+  }
+  .table-base th {
+    @apply bg-black/[0.03] px-4 py-3 text-xs font-semibold text-ink-900/60;
+  }
+  .table-base td {
+    @apply border-t border-black/5 px-4 py-3;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+}
